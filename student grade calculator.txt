@@ -1,0 +1,49 @@
+package Task2;
+import java.util.*;
+public class Main1 {
+    static void grade(int av){                   //method definition for grade selection
+        if(av>90&&av<=100){
+            System.out.println("Your grade is A1");   //A1 if percentage b/w 91&100
+        }
+        if(av>80&&av<=90){
+            System.out.println("Your grade is A2");     //A2 if percentage b/w 81&90
+        }
+        if(av>70&&av<=80){
+            System.out.println("Your grade is B1");     //B1 if percentage b/w 71&80
+        }
+        if(av>60&&av<=70){
+            System.out.println("Your grade is B2");     //B2 if percentage b/w 61&70
+        }
+        if(av>50&&av<=60){
+            System.out.println("Your grade is C1");     //C1 if percentage b/w 51&60
+        }
+        if(av>40&&av<=50){
+            System.out.println("Your grade is C2");     //C2 if percentage b/w 41&50
+        }
+        if(av>=35&&av<=40){
+            System.out.println("Your grade is D");     //D if percentage b/w 35&40
+        }
+        if(av<35){
+            System.out.println("Your grade is F");     //F if percentage<35
+        }
+    }
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int sum=0;
+        System.out.println("Enter the no of subjects:");
+        int n=sc.nextInt();
+        int a[]=new int[n];
+        for(int i=0;i<n;i++){
+            System.out.println("Enter the subject marks out of 100");
+             a[i]=sc.nextInt();
+        }
+        for(int i=0;i<a.length;i++){
+            sum+=a[i];                               //calculating total marks
+        }
+        System.out.println("Your total marks:"+sum);
+        int av=sum/n;                                   //calculating average
+        System.out.println("Your average Percentage:"+av+"%");
+        grade(av);
+
+    }
+}
